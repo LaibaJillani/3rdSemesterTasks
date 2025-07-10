@@ -1,16 +1,16 @@
 #include <iostream>
 using namespace std;
 
-int Fibonacci(int n){
-    if (n==0) {
+int fib(int n){
+    if(n<=1){
         return 1;
     }
-    return Fibonacci(n - 2) + Fibonacci(n - 1);
+    return fib(n-2) + fib(n-1);
 }
-
-int main () {
+int main(){
     int a;
+    cout << "Enter a number: ";
     cin >> a;
-    cout << "The number at " << a << " in Fibonacci series is: " << Fibonacci(a);
+    cout << "The term in Fibonacci series at " << a << " is " << fib(a) << "\n";
     return 0;
 }
