@@ -5,7 +5,10 @@ using namespace std;
 int main (){
     //Arithmetic Operators(Used to perform operations on variables)
     cout << "Arithmetic Operators:" << endl;
-    int number1 = 8 , number2 = 5;
+    int number1;
+    cin >> number1;
+    int number2;
+    cin >> number2;
     cout << "Integer 1 = " << number1 << endl
          << "Integer 2 = " << number2 << endl;
     cout << "The sum of given two integers is: " << number1 + number2 << endl; //performs addition
@@ -49,8 +52,10 @@ int main (){
     /*Assignment Operators(Used to assign values to variables)
     Assignmnet operator works and value is assigned to the variable at left*/
     cout << "Assignment Operators:" << endl;
-    int number3 = 10; // equal to operator
-    int number4 = 5;
+    int number3;
+    cin >> number3;
+    int number4;
+    cin >> number4;
     cout << "Integer 3 = " << number3 << endl 
          << "Integer 4 = " << number4 << endl;
 
@@ -82,7 +87,10 @@ int main (){
 
     //Bitwise Operators(perform bit operations)
     cout << "Bitwise Operators:" << endl;
-    int number5 = 26, number6 = 13;
+    int number5;
+    cin >> number5;
+    int number6;
+    cin >> number6;
     cout << "Integer 5 = " << number5 << endl
          << "Integer 6 = " << number6 << endl;
 
