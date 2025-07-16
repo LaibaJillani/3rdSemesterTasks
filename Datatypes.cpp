@@ -30,5 +30,12 @@ int main() {
     cout << "The ratings our parlor hold: ";
     cin >> reviews;
 
+    cout << "Name: " << name << endl;
+    cout << "Employees: " << employees << endl;
+    cout << "Salary: " << salary << endl;
+    cout << "Temperature: " << temperature << endl;
+    cout << "Greetings: " << greetings << endl;
+    cout << "Reviews: " << reviews << endl;
+
     return 0;
 }
