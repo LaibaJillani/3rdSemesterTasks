@@ -9,17 +9,24 @@ int main (){
     cin >> number1;
     int number2;
     cin >> number2;
+
     cout << "Integer 1 = " << number1 << endl
          << "Integer 2 = " << number2 << endl;
-    cout << "The sum of given two integers is: " << number1 + number2 << endl; //performs addition
 
-    cout << "The difference of given two integers is: " << number1 - number2 << endl; //performs subtraction
+    int sum = number1 + number2; //performs addition
+    cout << "The sum of given two integers is: " << sum << endl;
 
-    cout << "The multiplication of given two integers is: " << number1 * number2 << endl; //performs multiplication
+    int subtraction = number1 - number2; //performs subtraction
+    cout << "The difference of given two integers is: " << subtraction << endl;
 
-    cout << "The division of given two integers is: " << number1 / number2 << endl; //performs division
+    int multiplication = number1 * number2; //performs multiplication
+    cout << "The multiplication of given two integers is: " << multiplication << endl;
 
-    cout << "The modulus of given two integers is: " << number1 % number2 << endl; //modulus(returns the division remainder)
+    double division = number1 / number2; //performs division
+    cout << "The division of given two integers is: " << division << endl;
+
+    int modulus = number1 % number2; //modulus(returns the division remainder)
+    cout << "The modulus of given two integers is: " << modulus << endl;
 
     cout << "Increment of Integer 1: " << ++number1 << endl; //increases the value by 1
 
@@ -29,25 +36,33 @@ int main (){
     cout << "Comparison Operators:" << endl;
     bool result = (number1 == number2);
     cout << "Weather given integers are equal or not: " << result << endl;
+
     bool result2 = (number1 < number2);
     cout << "Weather given integer 1 is smaller than 2 or not: " << result2 << endl;
+
     bool result3 = (number1 > number2);
     cout << "Weather given integer 1 is greater than 2 or not: " << result3 << endl;
+
     bool result4 = (number1 >= number2);
     cout << "Weather given integer 1 is greater than equal to 2 or not: " << result4 << endl;
+
     bool result5 = (number1 <= number2);
     cout << "Weather given integer 1 is smaller than equal to 2 or not: " << result5 << endl;
+
     bool result6 = (number1 != number2);
     cout << "Weather given integer 1 is not equal to integer 2: " << result6 << endl << endl;
 
     //Logical Operators(Outputs in boolean form after checking conditions)
     cout << "Logical Operators:" << endl;
     //logical AND
-    cout << (number1 > number2 && number1 >= number2) << endl; // outputs 1 if both are true
+    bool result7 = (number1 > number2 && number1 >= number2); // outputs 1 if both are true
+    cout << result7 << endl;
     //logical OR
-    cout << (number1 > number2 || number1 < number2) << endl; // outputs 1 if anyone is true
+    bool result8 = (number1 > number2 || number1 < number2); // outputs 1 if anyone is true
+    cout << result8 << endl;
     //logical NOT
-    cout << (~number1 > number2) << endl << endl; // reverse the output
+    bool result9 = (~number1 > number2); // reverse the output
+    cout << result9 << endl << endl;
     
     /*Assignment Operators(Used to assign values to variables)
     Assignmnet operator works and value is assigned to the variable at left*/
@@ -56,6 +71,7 @@ int main (){
     cin >> number3;
     int number4;
     cin >> number4;
+
     cout << "Integer 3 = " << number3 << endl 
          << "Integer 4 = " << number4 << endl;
 
@@ -91,15 +107,21 @@ int main (){
     cin >> number5;
     int number6;
     cin >> number6;
+
     cout << "Integer 5 = " << number5 << endl
          << "Integer 6 = " << number6 << endl;
+         
+    int bitAND = (number5 & number6);
+    cout << "Result of Bitwise AND: " << bitAND << endl;
 
-    cout << "Result of Bitwise AND: " << (number5 & number6) << endl;
+    int bitOR = (number5 | number6);
+    cout << "Result of Bitwise OR: " << bitOR << endl;
 
-    cout << "Result of Bitwise OR: " << (number5 | number6) << endl;
+    int bitXOR = (number5 ^ number6);
+    cout << "Result of Bitwise XOR: " << bitXOR << endl;
 
-    cout << "Result of Bitwise XOR: " << (number5 ^ number6) << endl;
+    int bitNOT = (~number5);
+    cout << "Bitwise NOT of Integer 5: " << bitNOT << endl;
 
-    cout << "Bitwise NOT of Integer 5: " << (~number5) << endl;
     return 0;
 }
