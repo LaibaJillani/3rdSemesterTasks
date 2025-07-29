@@ -1,5 +1,7 @@
 // A Project where we are going to use OOP for product management
 #include <iostream>
+#include <fstream>
+#include <string>
 using namespace std;
 
 class Product { // Parent Base class
@@ -19,6 +21,14 @@ class Product { // Parent Base class
             this->price = price;
             this->warranty = warranty;
         }
+
+        virtual void productdetails(ostream& out) {
+            out << "Product Name: " << name << endl;
+            out << "Brand: " << brand << endl;
+            out << "Shape: " << shape << endl;
+            out << "Price: " << price << endl;
+            out << "Product Warranty: " << warranty << " years." << endl;
+        }
 };
 
 class Sales : public Product { // Inherited Derived class
@@ -26,6 +36,28 @@ class Sales : public Product { // Inherited Derived class
     double profit;
     double tax;
     double target;
+
+    // Set and Get method for accessing private members when needed
+    void setprofit(double profit){ 
+        this->profit = profit;
+    }
+    double getprofit(){
+        return profit;
+    }
+
+    void settax(double tax){
+        this->tax = tax;
+    }
+    double gettax(){
+        return tax;
+    }
+
+    void settarget(double target){
+        this->target = target;
+    }
+    double gettarget(){
+        return target;
+    }
 
     public:
     int itemsSold;
@@ -40,23 +72,29 @@ class Sales : public Product { // Inherited Derived class
         this->reviews = reviews;
     }
 
-    void salesdetails()
+    void salesdetails(ostream& out)
     {
-            cout << "Product Name: " << name << endl;
-            cout << "Brand: " << brand << endl;
-            cout << "Shape: " << shape << endl;
-            cout << "Price: " << price << endl;
-            cout << "Product Warranty: " << warranty << " years." << endl;
-        cout << "Number of items sold: " << itemsSold << endl;
-        cout << "Number of items found faulty: " << itemsFaulty << endl;
-        cout << "Overall feedback on the Website: " << reviews << endl;
+        productdetails(out);
+        out << "Number of items sold: " << itemsSold << endl;
+        out << "Number of items found faulty: " << itemsFaulty << endl;
+        out << "Overall feedback on the Website: " << reviews << endl;
+        
     }
 };
 
 int main () {
 
     Sales mySales("Dress", "Limelight", "Frock", 5999.9, 5, 750, 50, 'B');
-    mySales.salesdetails();
+    mySales.salesdetails(cout);
+
+    ofstream file_open("Product Data storing.txt", ios::app);
+    if (!file_open) {
+        cerr << "Failed to open file." << endl;
+        return 1;
+    }
+
+    mySales.salesdetails(file_open);
+    file_open.close();
 
     return 0;
 }
